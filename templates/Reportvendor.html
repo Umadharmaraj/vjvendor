@@ -1,0 +1,258 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Cotton Sandhai - Vendor Add Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/demo/site-demos.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/site-demos.css' %}"/>
+	<link rel="stylesheet" href="{% static 'vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'vendor/jquery-ui-1.12.1/jquery-ui.css' %}">
+	<link rel="stylesheet" href="{% static 'vendor/jquery-ui-1.12.1/jquery-ui.min.js' %}">
+	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'vendor/jquery-ui-1.12.1/jquery-ui.js' %}"></script>
+	<script src="{% static 'vendor/jquery-ui-1.12.1/jquery-ui.min.js' %]"></script>
+    <script src="{% static 'vendor/bootstrap-3.4.1-dist/js/bootstrap.min.js' %}"></script>
+   
+    <script src="{% static 'vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/additional-methods.min.js' %}"></script>
+    <script src="{% static 'js/jquery.steps.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    
+    <style>
+ .wizard-v1-content   {
+    
+    height:800px;
+  }
+    </style>
+</head>
+
+<body>
+<div id="wrapper" class="wrapper">
+	<!---Top menu-->
+	<div class="top_navbar">		
+	  <div class="openbtn" onclick="openNav()">
+		 <div class="one"></div>
+		 <div class="two"></div>
+		 <div class="three"></div>
+	  </div>
+	  <div class="top_menu">
+		<div class="logo"><img src="images/logo3.jpg"/><br></div>
+
+		<ul>     
+		<div class="dropdown">			
+		  <li class="dropbtn" ><a href="#">
+			<i class="glyphicon glyphicon-user"></i>
+			</a>
+		  </li>
+		  <div class="dropdown-content">
+				<a href="accountprofile.html">Account Info</a>
+				<a href="#">Payment Info</a>
+				<a href="#">Forgot Password</a>
+		  </div>		 		
+		</div>
+		<li><a href="#">
+			<i data-toggle="tooltip" data-placement="right" title="Notifications" class="glyphicon glyphicon-bell"></i>
+			</a>
+          </li>
+          <li><a href="#">
+			<i  data-toggle="tooltip" data-placement="right" title="Logout" class="glyphicon glyphicon-arrow-right"></i>
+			</a>
+		  </li>
+		</ul>		
+	  </div>
+	</div>
+
+    <!-- Sidebar -->
+    <div id="mySidepanel" class="sidepanel">  
+	  <ul class="sidebar-nav" id="">     
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		
+		<li><a href="traders" >Trades</a></li>
+        <li><a href="vendors">Vendors</a></li>
+	  </ul>
+	</div>
+	
+    <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+            <div class="col-md-12">
+            <div class="main_container">
+				
+		<!--div class="page-content" style="background-color: rgba(0, 0, 0, 0.15)"-->
+			<div class="wizard-v1-content">			
+				<div class="wizard-form">					
+					<form class="form-register" id="form-register" action="confirm" method="get">
+
+						<div id="form-total">
+							<!-- SECTION 1 -->
+							
+						
+                            <h3  style="font-size:28px;text-align:center"><b>Confirm Vendor Details</b></h3>
+                           
+							<section >
+                                
+								<div class="inner" style="margin-left:18px;">
+								
+									<!--Vendor form-->
+									<form method="get" name="venorreportform" action="login.html" id="venorreportform" style="background-color:lightgray">
+                                    <div class="form-row table-responsive reppadd">
+										<table class="table" style="border:none;">
+											<tbody style="border:none;">
+												<!---section1-->
+												<!--tr class="space-row" style="border:none;padding-bottom:0px;">
+													<td><h3 class="ventitle">Vendor Details</h3></td>
+												</!--tr--->
+
+												<tr class="space-row bordwhite">											
+													<th>Vendor Type:</th>
+													<td id="vtype-val"></td>
+													
+												</tr>
+
+												<tr class="space-row bordwhite">											
+													<th style="width:auto">Company Email:</th>
+													<td id="company_email-val"></td>
+												</tr>
+
+												<tr class="space-row bordwhite">																							
+													<th style="width:auto">Company Name:</th>
+													<td id="company_name-val"></td>
+												</tr>
+
+												<tr class="space-row bordwhite">
+													<th>Address:</th>
+													<td class="vendmob"  id="adddoor-val"></td>
+													<td class="vendmob"  id="locality-val"></td>
+													<td class="vendmob"  id="state-val"></td>
+													<td class="vendmob"  id="pincode-val"></td>
+												</tr>
+
+												<!---section2-->
+											
+												<tr class="space-row bordwhite"> 					
+												
+													<th style="width:auto">Proprietor/Director Name:</th>
+													<td id="proprietorDirectorName-val"></td>
+												
+
+												</tr>
+												<tr class="space-row bordwhite"> 					
+												
+													<th style="width:auto" >Proprietor/Director Contact No:</th>
+													<td id="proprietorDirectorContact-val"></td>
+
+												</tr>
+												<tr class="space-row bordwhite">
+
+													<th style="width:auto"  >Local Contact Name:</th>
+													<td style="width:185px" id="local_contact_name-val"></td>
+												
+													<th style="width:auto"> Local contact No:</th>
+													<td style="width:185px" id="local_contact_no-val"></td>
+												</tr>
+										
+											
+												<tr class="space-row bordwhite">						
+												
+													<th class="vendmob1">GSTIN:</th>
+													<td id="gstin-val"   style="width:210px"></td>
+													<th  class="vendmob" >UIN:</th>
+													<td id="uin-val" style="width:190px"></td>
+													<th class="vendmob"  >PAN:</th>
+													<td id="pan-val" style="width:190px"></td>
+
+												</tr>
+
+												<!---section3-->
+												<tr class="space-row">
+													<th><h3 style="font-size:18px;font-weight: 600;"></h3></th>
+											    </tr>
+												<tr class="space-row bordwhite">
+												
+													<th >AccountNo:</th>
+													<td style="width:220px" id="accountno-val"></td>
+													<th style="width:auto">AccountName:</th>
+													<td  id="accountname-val"></td>
+																	
+												</tr>
+												<tr class="space-row bordwhite" >
+											
+													<th style="width:auto">Account Type:</th>
+													<td id="accounttype-val"></td>
+																			
+												</tr>
+												<tr class="space-row bordwhite">				
+													<th class="vendmob2" >Bankname:</th>
+													<td id="bankname-val" style="width:220px;"></td>
+													<th class="vendmob">Branch:</th>
+													<td id="branch-val" style="width:190px;margin-left:0px;text-align:left;"></td>
+													<th class="vendmob" >IFSC:</th>
+													<td id="ifsc-val" style="width:190px;"></td>
+												</tr>
+												<tr class="space-row">
+													<th><h3 style="font-size:20px;width:200px;font-weight: 600;"></h3></th>
+											    </tr>
+												<tr class="space-row bordwhite">						
+													<th >Insurance No:</th>
+													<td style="width:220px" id="insurno-val"></td>
+													<th >ExpiryDate:</th>
+													<td id="expirdate1-val" ></td>
+
+												</tr>
+												<tr class="space-row bordwhite">						
+															
+													<th style="width:auto">Insurance Name:</th>
+												<td id="insurname-val" ></td>
+												</tr>
+											</tbody>
+										</table>										
+									</div>
+										<!------------------------BUTTON--------------------------------->
+										<button class="btnsubmit"  value="Submit1" id="submitvendor" style="display:none">Submit</button>			
+										<!----------------------BUTTON----------------------------------->
+								</form>	
+								
+								
+							</section>		
+						
+						</div>						
+					</form>
+				</div>
+			</div>
+	
+		</div>
+        </div>
+      </div>
+      </div>
+      </div>
+	</div>
+
+{% block javascript %}
+	<script>
+	function openNav() {
+  	document.getElementById("mySidepanel").style.width = "200px";
+	}
+    
+	function closeNav() {
+	  document.getElementById("mySidepanel").style.width = "0px";	  
+	}
+
+
+/* Auto complete query */
+
+</script>
+{% endblock javascript %}
+
+</body>
+</html>
